@@ -9,7 +9,7 @@
 
 <div>
   <% @images.each do |image|%>
-    <%= link_to image_tag(image.image.url(:large)), image.image.url %>
+    <%= link_to image_tag(image.image.url(:large)), admin_image_path(image) %>
   <% end %>
 </div>
 

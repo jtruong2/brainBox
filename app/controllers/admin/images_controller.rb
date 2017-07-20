@@ -14,6 +14,17 @@ class Admin::ImagesController < Admin::AdminController
     end
   end
 
+  def show
+    @image = Image.find(params[:id])
+  end
+
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    flash[:notice] = "Image deleted"
+    redirect_to admin_dashboard_index_path
+  end
+
   private
 
   def image_params

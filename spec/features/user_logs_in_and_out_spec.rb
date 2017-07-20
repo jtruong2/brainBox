@@ -5,15 +5,16 @@ RSpec.describe "user logs in" do
       user = create(:user)
 
       visit login_path
+
       fill_in("session[username]", with: user.username)
       fill_in("session[password]", with: "Mypassword")
-      click_on("login", match: :first)
-      save_and_open_page
+      click_button("login")
+
       expect(page).to have_content("Welcome, #{user.username}")
       expect(page).to have_content("Successful login")
       expect(current_path).to eq(user_path(user))
 
-      click_on "logout"
+      click_on "sign out"
 
       expect(page).to_not have_content("#{user.username}")
       expect(page).to have_content("You've logged out")
@@ -28,8 +29,8 @@ RSpec.describe "user logs in" do
       visit login_path
       fill_in("session[username]", with: user.username)
       fill_in("session[password]", with: "fakepassword")
-      click_on("login", match: :first)
-      
+      click_button("login")
+
 
       expect(page).to_not have_content("Welcome, #{user.username}")
       expect(page).to have_content("Failed login attempt, try again")

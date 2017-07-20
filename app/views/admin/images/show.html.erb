@@ -1,0 +1,2 @@
+<%= image_tag(@image.image.url(:large)) %>
+<%= link_to 'delete image', admin_image_path(@image), method: :delete, data: {confirm: "Are you sure?"}%>

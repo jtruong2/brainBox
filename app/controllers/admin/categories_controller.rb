@@ -21,8 +21,6 @@ class Admin::CategoriesController < Admin::AdminController
     redirect_to admin_dashboard_index_path
   end
 
-
-
   private
 
   def category_params

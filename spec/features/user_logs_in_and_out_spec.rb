@@ -7,8 +7,8 @@ RSpec.describe "user logs in" do
       visit login_path
       fill_in("session[username]", with: user.username)
       fill_in("session[password]", with: "Mypassword")
-      click_on "login"
-
+      click_on("login", match: :first)
+      save_and_open_page
       expect(page).to have_content("Welcome, #{user.username}")
       expect(page).to have_content("Successful login")
       expect(current_path).to eq(user_path(user))
@@ -28,7 +28,8 @@ RSpec.describe "user logs in" do
       visit login_path
       fill_in("session[username]", with: user.username)
       fill_in("session[password]", with: "fakepassword")
-      click_on "login"
+      click_on("login", match: :first)
+      
 
       expect(page).to_not have_content("Welcome, #{user.username}")
       expect(page).to have_content("Failed login attempt, try again")

@@ -37,7 +37,6 @@ RSpec.describe "admin logs in" do
     visit admin_dashboard_index_path
     click_on("delete", match: :first)
 
-
     expect(page).to_not have_content(category1.title)
     expect(page).to have_content(category2.title)
   end

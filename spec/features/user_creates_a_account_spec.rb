@@ -5,10 +5,10 @@ RSpec.describe "User registers for an account" do
       user = build(:user)
 
       visit '/'
-      click_on 'sign up'
+      click_on('sign up', match: :first)
       fill_in('user_username', with: user.username)
       fill_in('user_password',  with: user.password)
-      click_on 'sign up'
+      click_on('register')
 
       expect(page).to have_content("Welcome, #{user.username}")
       expect(page).to have_content("Account created")
@@ -22,10 +22,10 @@ RSpec.describe "User registers for an account" do
 
 
       visit '/'
-      click_on 'sign up'
+      click_on('sign up', match: :first)
       fill_in('user_username', with: user2.username)
       fill_in('user_password',  with: user2.password)
-      click_on 'sign up'
+      click_on 'register'
 
       expect(page).to_not have_content("Welcome, #{user2.username}")
       expect(page).to_not have_content("Successfully signed in")

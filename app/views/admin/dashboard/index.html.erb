@@ -1,0 +1,7 @@
+<%= flash[:notice] %>
+<h3>Admin's Dashboard</h3>
+<h4>Category list</h4>
+<% @categories.each do |category| %>
+  <%= category.title %>
+<% end %>
+<%= link_to "Create a new category", new_admin_category_path %>

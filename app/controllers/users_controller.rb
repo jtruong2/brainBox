@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      flash[:notice] = "Successfully signed in"
+      flash[:notice] = "Account created"
       redirect_to @user
     else
       flash[:notice] = "Invalid entry, try again"

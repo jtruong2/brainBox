@@ -14,6 +14,15 @@ class Admin::CategoriesController < Admin::AdminController
     end
   end
 
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    flash[:notice] = "Category was removed"
+    redirect_to admin_dashboard_index_path
+  end
+
+
+
   private
 
   def category_params

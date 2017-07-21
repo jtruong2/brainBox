@@ -1,0 +1,8 @@
+<%= form_for [@user, @idea], url: user_ideas_path, method: :post do |f| %>
+  <%= f.label :Enter_idea %><br/>
+  <%= f.text_area :content %><br/>
+
+  <%= f.collection_select(:category_id, Category.all, :id, :title ) %><br/><br/>
+
+  <%= f.submit "Add idea" %>
+<% end %>

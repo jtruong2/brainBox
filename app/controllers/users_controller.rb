@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :validate_user, only: :show
+  before_action :validate_user, only: [:show]
 
   def validate_user
     render file: "/public/404" unless current_user.id == params[:id].to_i

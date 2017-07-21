@@ -1,4 +1,4 @@
-<%= form_for [@user, @idea], url: user_ideas_path, method: :post do |f| %>
+<%= form_for [current_user, @idea], url: user_ideas_path, method: :post do |f| %>
   <%= f.label :Enter_idea %><br/>
   <%= f.text_area :content %><br/>
 

@@ -3,6 +3,11 @@
   <%= f.text_area :content %><br/>
 
   <%= f.collection_select(:category_id, Category.all, :id, :title ) %><br/><br/>
-
+  <% Image.all.each do |image| %>
+     <label>
+       <%= check_box_tag "idea[image_ids][]", image.id, f.object.images.include?(image) %>
+       <%= image_tag(image.image.url(:large)) %>
+     </label>
+    <% end %>
   <%= f.submit "Add idea" %>
 <% end %>

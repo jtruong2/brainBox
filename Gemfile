@@ -32,7 +32,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'jquery-rails'
 gem "paperclip", "~> 5.0.0"
-gem 'cancancan', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

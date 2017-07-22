@@ -6,6 +6,7 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
+    @images = Image.all
   end
 
   def create
@@ -44,6 +45,6 @@ class IdeasController < ApplicationController
   private
 
   def idea_params
-    params.require(:idea).permit(:content, :category_id)
+    params.require(:idea).permit(:content, :category_id, { image_ids: []})
   end
 end

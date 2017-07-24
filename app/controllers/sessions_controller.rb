@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to @user
     else
       flash[:warning] =  "Failed login attempt, try again"
-      redirect_to login_path
+      redirect_to new_session_path
     end
   end
 

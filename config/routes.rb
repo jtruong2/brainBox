@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  root to: "homepage#index"
+  use_doorkeeper
+  root to: "pages#index"
 
-  get '/', to: "homepage#index"
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
+  resources :sessions, only: [:new, :create]
   delete '/logout', to: 'sessions#destroy'
   resources :users, only: [:new, :create, :show] do
     resources :ideas

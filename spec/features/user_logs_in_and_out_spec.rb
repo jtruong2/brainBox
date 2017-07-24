@@ -4,7 +4,7 @@ RSpec.describe "user logs in" do
     scenario "sees user dashboard" do
       user = create(:user)
 
-      visit login_path
+      visit new_session_path
 
       fill_in("session[username]", with: user.username)
       fill_in("session[password]", with: "Mypassword")
@@ -26,7 +26,7 @@ RSpec.describe "user logs in" do
     scenario "redirects to login displaying error invalid credentials" do
       user = create(:user)
 
-      visit login_path
+      visit new_session_path
       fill_in("session[username]", with: user.username)
       fill_in("session[password]", with: "fakepassword")
       click_button("login")
@@ -34,7 +34,7 @@ RSpec.describe "user logs in" do
 
       expect(page).to_not have_content("Welcome, #{user.username}")
       expect(page).to have_content("Failed login attempt, try again")
-      expect(current_path).to eq(login_path)
+      expect(current_path).to eq(new_session_path)
     end
   end
 end

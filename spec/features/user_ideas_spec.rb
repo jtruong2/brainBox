@@ -25,7 +25,7 @@ RSpec.describe "User visits ideas index" do
 
     expect(page).to have_content("New idea")
     click_on 'Delete'
-    save_and_open_page
+
     expect(page).to_not have_content(idea.content)
     expect(page).to have_content("Idea deleted")
   end

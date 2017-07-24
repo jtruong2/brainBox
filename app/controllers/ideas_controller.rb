@@ -12,10 +12,10 @@ class IdeasController < ApplicationController
   def create
     @idea = current_user.ideas.create(idea_params)
     if @idea.save
-      flash[:notice] = "Idea saved"
+      flash[:notice] = "Idea saved to your Box"
       redirect_to user_idea_path(current_user, @idea)
     else
-      flash[:warning] = "An error occured, try again"
+      flash[:warning] = "Oops! An error occured, try again"
       render :new
     end
   end

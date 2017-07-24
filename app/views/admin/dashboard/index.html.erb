@@ -1,16 +1,19 @@
-<h3>Admin's Dashboard</h3>
-<div>
-  <h4>Category list</h4>
-  <% @categories.each do |category| %>
-    <p><%= category.title %>  <%= link_to "delete", admin_category_path(category), method: :delete, data: {confirm: "#{category.title} will be deleted"} %></p>
-  <% end %>
-</div>
-<p><%= link_to "Create a new category", new_admin_category_path %></p>
+<center><h3>Admin's Dashboard</h3></center><br/>
 
-<div>
-  <% @images.each do |image|%>
-    <%= link_to image_tag(image.image.url(:large)), admin_image_path(image) %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p><%= link_to "Create a new category", new_admin_category_path %></p>
+      <h4>Category list</h4>
+      <% @categories.each do |category| %>
+      <p><%= category.title %>  <%= link_to "delete", admin_category_path(category), method: :delete, data: {confirm: "#{category.title} will be deleted"} %></p>
+      <% end %>
+    </div>
+    <div class="col">
+      <p><%= link_to "Add a new image", new_admin_image_path %><p>
+      <% @images.each do |image|%>
+      <%= link_to image_tag(image.image.url(:med)), admin_image_path(image) %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<p><%= link_to "Add a new image", new_admin_image_path %><p>

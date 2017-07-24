@@ -9,8 +9,8 @@ class Admin::CategoriesController < Admin::AdminController
       flash[:notice] = "Category added"
       redirect_to admin_dashboard_index_path
     else
-      flash[:notice] = "An error occurred, try again"
-      redirect_to new_admin_category
+      flash[:warning] = "An error occurred, try again"
+      redirect_to new_admin_category_path
     end
   end
 

@@ -9,7 +9,7 @@ class Admin::ImagesController < Admin::AdminController
       flash[:notice] = "Image saved"
       redirect_to admin_dashboard_index_path
     else
-      flash[:notice] = "An error occured, try again"
+      flash[:warning] = "An error occured, try again"
       redirect_to new_admin_image_path
     end
   end

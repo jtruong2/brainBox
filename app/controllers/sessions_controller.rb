@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Successful login"
       redirect_to @user
     else
-      flash[:notice] =  "Failed login attempt, try again"
+      flash[:warning] =  "Failed login attempt, try again"
       redirect_to login_path
     end
   end

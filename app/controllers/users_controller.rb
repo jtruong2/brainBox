@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Account created"
       redirect_to @user
     else
-      flash[:notice] = "Invalid entry, try again"
+      flash[:warning] = "Invalid entry, try again"
       redirect_to new_user_path
     end
   end

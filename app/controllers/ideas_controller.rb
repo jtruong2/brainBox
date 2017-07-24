@@ -15,7 +15,7 @@ class IdeasController < ApplicationController
       flash[:notice] = "Idea saved"
       redirect_to user_idea_path(current_user, @idea)
     else
-      flash[:notice] = "An error occured, try again"
+      flash[:warning] = "An error occured, try again"
       render :new
     end
   end

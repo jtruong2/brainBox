@@ -16,6 +16,9 @@ In early production
 
 Current production features include:
 *signup/login/logout
+
 *admin can create categories and images
+
 *Users can create an idea and store it in their box
+
 *Users can add existing images to ideas

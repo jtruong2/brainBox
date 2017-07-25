@@ -1,24 +1,21 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# brainBox
 
-Things you may want to cover:
+brainBox is an intuitive way to store or share your great ideas to the world.
 
-* Ruby version
+## Installing / Getting started
 
-* System dependencies
+Clone and bundle install.
+Run server.
 
-* Configuration
+### Status
 
-* Database creation
+In early production
 
-* Database initialization
+## Features
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Current production features include:
+*signup/login/logout
+*admin can create categories and images
+*Users can create an idea and store it in their box
+*Users can add existing images to ideas
